@@ -137,7 +137,7 @@ We used Random Forest with 100 estimators to rank feature importance and selecte
 
 We trained all models on an 80/20 train-test split with stratified sampling to maintain class proportions. We evaluated each model on both the full feature set (30 features) and reduced feature set (16 features).
 
-### K-Nearest Neighbors (KNN)
+### 1. K-Nearest Neighbors (KNN)
 
 KNN is a distance-based classifier that assigns class labels based on the majority vote of k nearest training samples.
 
@@ -156,7 +156,7 @@ KNN is a distance-based classifier that assigns class labels based on the majori
 
 **Observation:** Minimal difference between feature sets. Reduced features performed marginally better on accuracy and recall.
 
-### Decision Tree (CART)
+### 2. Decision Tree (CART)
 
 CART (Classification and Regression Tree) recursively partitions the feature space using binary splits.
 
@@ -180,7 +180,7 @@ CART (Classification and Regression Tree) recursively partitions the feature spa
 <p align="center"><img src="images/models/dt_tree_visualization.png" alt="Decision Tree Visualization" /></p>
 <p align="center"><em>First 3 levels of the decision tree trained on reduced features, showing split criteria (gini), sample counts, and class predictions at each node</em></p>
 
-### Random Forest
+### 3. Random Forest
 
 Ensemble method that aggregates predictions from multiple decision trees trained on bootstrap samples.
 
@@ -203,7 +203,7 @@ Ensemble method that aggregates predictions from multiple decision trees trained
 <p align="center"><img src="images/models/rf_feature_importance.png" alt="Random Forest Feature Importance" /></p>
 <p align="center"><em>Feature importance comparison between full model (left, 15 features shown) and reduced model (right, all 15 features). Gender dominates in both, followed by hemoglobin, gtp, and height.</em></p>
 
-### Support Vector Machine (SVM)
+### 4. Support Vector Machine (SVM)
 
 Maximum margin classifier that finds the optimal hyperplane separating classes in feature space.
 
@@ -222,7 +222,7 @@ Maximum margin classifier that finds the optimal hyperplane separating classes i
 
 **Observation:** Reduced features outperformed full features on accuracy and recall. SVM benefits from dimensionality reduction.
 
-### Naive Bayes
+### 5. Naive Bayes
 
 Probabilistic classifier based on Bayes theorem with strong independence assumptions between features.
 
@@ -240,7 +240,7 @@ We tested Gaussian NB, Bernoulli NB, Multinomial NB, and Complement NB. Gaussian
 
 **Observation:** Highest recall among simpler models. Lower precision indicates more false positives. Suitable when missing smokers is more costly than false alarms.
 
-### Logistic Regression
+### 6. Logistic Regression
 
 Linear classifier that models the probability of class membership using the logistic function.
 
@@ -260,7 +260,7 @@ Linear classifier that models the probability of class membership using the logi
 
 **Observation:** Highest recall (93.27%) and F1 score (0.7061) among all models. The balanced class weights addressed the 63:37 class imbalance effectively.
 
-### Neural Network
+### 7. Neural Network
 
 Multi-layer perceptron with backpropagation for learning non-linear decision boundaries.
 
